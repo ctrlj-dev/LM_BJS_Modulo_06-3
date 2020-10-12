@@ -53,12 +53,12 @@ var getRandomAvailability = (() => {
     return myTeam;
 })()
 
+
 // Función para crear la agenda
 
 var checkAvailability = () => {
     for (var i = 0; i < myTeam.length; i++) {
         console.log('Disponibilidad de María', myTeam[i].name)
-
         for (var x = 0; x < myTeam[i].availability.length; x++) {
             console.log(WORK_HOURS[x] + ': ' + myTeam[i].availability[x]);               
         }

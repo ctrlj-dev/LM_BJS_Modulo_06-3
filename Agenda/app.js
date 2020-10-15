@@ -51,7 +51,6 @@ var getRandomAvailability = (() => {
     return myTeam;
 })()
 
-
 // Función para crear la agenda
 
 var createAgenda = (() => {
@@ -82,11 +81,10 @@ var apointment = false;
 
 var compareAgenda = (() => {
 
-    for (var j = 0; j < getRandomAvailability.length; j++) {
-        for (var i = 0; i < getRandomAvailability.length; i++) {
-            output[j] = output[j] && getRandomAvailability[i].availability[j];
+    for (var j = 0; j < WORK_HOURS.length; j++) {
+        for (var i = 0; i < getRandomAvailability.length; i++) {            
+            output[j] = output[j] && getRandomAvailability[i].availability[j];               
         }
-
         if (output[j]) {
             apointment = true;
             console.log('/*============================*/');
@@ -101,5 +99,6 @@ var compareAgenda = (() => {
         console.log('/*============================*/');
 
     }
-
 })();
+
+

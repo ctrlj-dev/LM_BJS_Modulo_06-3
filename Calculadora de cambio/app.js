@@ -1,3 +1,11 @@
+console.log("");
+console.log("//-----------------------------//");
+console.log("No cosingo resolver el challenge :(");
+console.log("//-----------------------------//");
+console.log("");
+
+
+
 const billetes = [{
         importe: 200
     },
@@ -93,9 +101,9 @@ var calculateRefundAmount = () => {
                     console.log(resultMessage);
 
                     var billInfo = document.createElement("p");
-                    var node = document.createTextNode(resultMessage);
+                    var billNode = document.createTextNode(resultMessage);
 
-                    billInfo.appendChild(node);
+                    billInfo.appendChild(billNode);
                     textResultBills.appendChild(billInfo);
 
                 }
@@ -136,16 +144,18 @@ var calculateRefundAmount = () => {
             var numberOfBill = (parseInt(refundAmount, 10));
 
             if (numberOfBill > 0) {
+
                 result = result - (numberOfBill * monedas[x].importe);
+                
                 resultMessage = numberOfBill + ' monedas de: ' + monedas[x].importe + '€'
 
                 console.log(resultMessage);
 
-                var billInfo = document.createElement("p");
-                var node = document.createTextNode(resultMessage);
+                var coinInfo = document.createElement("p");
+                var coinNode = document.createTextNode(resultMessage);
 
-                billInfo.appendChild(node);
-                textResultCoins.appendChild(billInfo);
+                coinInfo.appendChild(coinNode);
+                textResultCoins.appendChild(coinInfo);
             }
 
 
@@ -157,6 +167,7 @@ var calculateRefundAmount = () => {
 
 
         } while (result > 0)
+
     } else {
 
         resultMessage = 'No nos tienen que devolver monedas';

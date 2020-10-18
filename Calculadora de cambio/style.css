@@ -50,7 +50,8 @@ input {
     color: #6B54DA;
     outline: none;
     padding: 10px 15px;
-    display: block
+    display: block;
+    margin: 0 auto;
 }
 
 .main-container {

@@ -91,8 +91,6 @@ var calculateRefundAmount = () => {
                 var numberOfBill = (parseInt(refundAmount, 10));
                 result = result - (numberOfBill * billetes[i].importe);
 
-
-
                 if (numberOfBill > 0) {
 
                     resultMessage = numberOfBill + ' billetes de: ' + billetes[i].importe + '€';
@@ -107,11 +105,7 @@ var calculateRefundAmount = () => {
 
                 }
 
-
-
-
             } while (refundAmount < 1)
-
 
         } else {
 
@@ -174,7 +168,7 @@ var calculateRefundAmount = () => {
 
     } else {
 
-        resultMessage = 'No nos tienen que devolver monedas';
+        resultMessage = 'No hay que devolver monedas';
 
         var billInfo = document.createElement("p");
         var node = document.createTextNode(resultMessage);
@@ -182,7 +176,9 @@ var calculateRefundAmount = () => {
         billInfo.appendChild(node);
         textResultCoins.appendChild(billInfo);
     }
+
     return result;
+
 }
 
 

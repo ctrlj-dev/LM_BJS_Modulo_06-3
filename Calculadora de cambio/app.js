@@ -95,7 +95,6 @@ var calculateRefundAmount = () => {
 
                 if (numberOfBill > 0) {
 
-
                     resultMessage = numberOfBill + ' billetes de: ' + billetes[i].importe + '€';
 
                     console.log(resultMessage);
@@ -140,13 +139,16 @@ var calculateRefundAmount = () => {
 
             x++;
 
-            refundAmount = result / monedas[x].importe;
+            result = Math.round(result * 100) / 100;
+
+            refundAmount = result / monedas[x].importe;           
+
             var numberOfBill = (parseInt(refundAmount, 10));
 
             if (numberOfBill > 0) {
 
                 result = result - (numberOfBill * monedas[x].importe);
-                
+                result = Math.round(result * 100) / 100;
                 resultMessage = numberOfBill + ' monedas de: ' + monedas[x].importe + '€'
 
                 console.log(resultMessage);
@@ -160,8 +162,10 @@ var calculateRefundAmount = () => {
 
 
             if (result > 0) {
+                result = Math.round(result * 100) / 100;
                 console.log('Nos siguen deviendo: ', result + '€');
             } else {
+                result = Math.round(result * 100) / 100;
                 console.log('No nos deben nada: ', result + '€');
             }
 
